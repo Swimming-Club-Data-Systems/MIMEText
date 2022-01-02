@@ -514,6 +514,15 @@ var MIMEMessage = /*#__PURE__*/function () {
       return mailbox;
     }
   }, {
+    key: "setReplyTo",
+    value: function setReplyTo(input) {
+      var mailbox = new Mailbox(input, {
+        type: 'from'
+      });
+      this.setHeader('Reply-To', mailbox);
+      return mailbox;
+    }
+  }, {
     key: "getSender",
     value: function getSender() {
       return this.getHeader('From');

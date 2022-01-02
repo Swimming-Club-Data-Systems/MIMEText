@@ -367,6 +367,14 @@ class MIMEMessage {
     return mailbox
   }
 
+  setReplyTo(input) {
+    const mailbox = new Mailbox(input, {type: 'from'});
+
+    this.setHeader('Reply-To', mailbox);
+
+    return mailbox
+  }
+
   getSender() {
     return this.getHeader('From')
   }
